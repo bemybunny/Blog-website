@@ -40,12 +40,12 @@ const Card = ({ data, handlelike, handleunlike, handleDelete, handledislike, han
       setTimeAgo(timeAgoString);
     }
   }, [data.createdAt]);
-
+console.log(data);
   return (
     <div className="m-2 md:m-4 h-fit flex py-5 px-5 flex-col col-span-full xl:col-span-6 bg-gradient-to-r from-[#434974] to-[#242949] shadow-lg rounded-lg border border-slate-700">
       <div className="flex justify-between items-center mb-4">
         <div className="flex items-center">
-          <img className="h-8 w-8 rounded-full mr-2" src={user?.picture} alt="Profile" />
+          <img className="h-8 w-8 rounded-full mr-2" src={data.picture} alt="Profile" />
           <div className="flex flex-col">
           <span className="text-white font-semibold">{data.username}</span>
           </div>
