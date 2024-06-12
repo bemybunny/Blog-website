@@ -44,7 +44,7 @@ function Blogs() {
 
     try {
       const response = await axios.post(
-        `http://localhost:3000/createblog`,
+        `https://blogbackened.onrender.com/createblog`,
         formData
       );
       setFormField({
@@ -67,7 +67,7 @@ function Blogs() {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get(`http://localhost:3000/getblog`);
+      const response = await axios.get(`https://blogbackened.onrender.com/getblog`);
       setBlog(response.data);
     } catch (err) {
       console.log("error in getblog frontend side:", err);
@@ -91,7 +91,7 @@ function Blogs() {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          await axios.delete(`http://localhost:3000/blogdelete/${_id}`);
+          await axios.delete(`https://blogbackened.onrender.com/blogdelete/${_id}`);
           Swal.fire("Deleted!", "Your blog post has been deleted.", "success");
           fetchData(); // Fetch updated blog data
         } catch (err) {
@@ -109,7 +109,7 @@ function Blogs() {
   const handlelike = async (userId, _id) => {
     console.log("hegy");
     try {
-      const response = await axios.put(`http://localhost:3000/likeblog`, {
+      const response = await axios.put(`https://blogbackened.onrender.com/likeblog`, {
         userId: userId,
         _id: _id,
       });
@@ -122,7 +122,7 @@ function Blogs() {
 
   const handleunlike = async (userId, _id) => {
     try {
-      const response = await axios.put(`http://localhost:3000/unlikeblog`, {
+      const response = await axios.put(`https://blogbackened.onrender.com/unlikeblog`, {
         userId: userId,
         _id: _id,
       });
@@ -136,7 +136,7 @@ function Blogs() {
   const handledislike = async (userId, _id) => {
     console.log("heyyy");
     try {
-      const response = await axios.put(`http://localhost:3000/dislikeblog`, {
+      const response = await axios.put(`https://blogbackened.onrender.com/dislikeblog`, {
         userId: userId,
         _id: _id,
       });
@@ -149,7 +149,7 @@ function Blogs() {
 
   const handleundislike = async (userId, _id) => {
     try {
-      const response = await axios.put(`http://localhost:3000/undislikeblog`, {
+      const response = await axios.put(`https://blogbackened.onrender.com/undislikeblog`, {
         userId: userId,
         _id: _id,
       });
